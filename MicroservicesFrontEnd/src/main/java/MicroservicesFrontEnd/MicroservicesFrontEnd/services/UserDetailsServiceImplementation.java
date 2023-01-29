@@ -17,6 +17,7 @@ public class UserDetailsServiceImplementation implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) {
+        System.out.println("*****************Now loading by username*****************: " + username);
         UserModel user = userService.getUser(username);
         List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_USER"));
         if (user != null) {
