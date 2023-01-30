@@ -30,7 +30,7 @@ public class ViewController {
     public String displayItems(Model model, Principal principal) {
         UserModel user = userService.getUser(principal.getName());
         model.addAttribute("userId", user.getId());
-        model.addAttribute("items", itemService.getAllItems());
+        model.addAttribute("items", itemService.fetchAllItems());
         return "item-list";
     }
 

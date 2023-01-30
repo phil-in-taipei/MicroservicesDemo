@@ -1,5 +1,4 @@
 package MicroservicesFrontEnd.MicroservicesFrontEnd.models;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,11 +9,9 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Item {
-    @JsonProperty("itemId")
+public class CartItem {
+    @JsonProperty("cartId")
     private Long id;
-    private Long cartItemId;
+    private Long itemId;
     private String name;
-    private String description;
-    private Integer amount;
 }

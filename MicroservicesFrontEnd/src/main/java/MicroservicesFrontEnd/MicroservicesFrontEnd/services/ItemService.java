@@ -17,11 +17,20 @@ public class ItemService {
     @LoadBalanced
     RestTemplate restTemplate;
 
-    public List<Item> getAllItems() {
+    public List<Item> fetchAllItems() {
         ResponseEntity<Item[]> response = restTemplate.getForEntity(
                 "http://ITEM-MICROSERVICE/item", Item[].class);
         if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
             return Arrays.asList(response.getBody());
+        } else {
+            return null;
+        }
+    }
+
+    public Item fetchItemById(Long itemId) {
+        ResponseEntity<Item> response = restTemplate.getForEntity("http://ITEM-MICROSERVICE/item/" + itemId, Item.class);
+        if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
+            return response.getBody();
         } else {
             return null;
         }
