@@ -10,8 +10,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CartItem {
-    @JsonProperty("cartId")
-    private Long id;
+    @JsonProperty("id")
+    private Long cartItemId;
     private Long itemId;
     private String name;
+    private String description;
+    private Integer amount;
+
 }

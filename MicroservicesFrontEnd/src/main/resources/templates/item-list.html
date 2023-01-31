@@ -24,8 +24,13 @@
             <th scope="row" th:text="${item.id}"></th>
             <td th:text="${item.name}"></td>
             <td th:text="${item.description}"></td>
-            <td><a th:href="@{/cart/userId}" class="btn btn-primary">Add</a></td>
-        </tr>
+            <td>
+                <form action="#" th:action="@{/cart/__${userId}__/__${item.id}__}" method="post">
+                    <input class="btn btn-primary" type="submit" value="Add"/>
+                </form>
+            </td>
+            <!--<td><a th:href="@{/cart/__${userId}__/__${item.id}__}" class="btn btn-primary">Add</a></td> -->
+        </tr> <!-- @{/item/__${userId}__/__${cartItem.cartItemId}__/__${cartItem.amount} - 1__}" -->
         </tbody>
     </table>
 </div>

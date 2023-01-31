@@ -10,5 +10,5 @@ import java.util.List;
 @NoArgsConstructor
 public class Cart {
     private Long userId;
-    private List<Item> items;
+    private List<CartItem> items;
 }

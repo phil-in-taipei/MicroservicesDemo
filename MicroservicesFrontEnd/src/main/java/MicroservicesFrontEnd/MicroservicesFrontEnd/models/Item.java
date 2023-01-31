@@ -13,8 +13,6 @@ import lombok.Setter;
 public class Item {
     @JsonProperty("itemId")
     private Long id;
-    private Long cartItemId;
     private String name;
     private String description;
-    private Integer amount;
 }

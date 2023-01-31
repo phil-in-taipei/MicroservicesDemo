@@ -23,7 +23,7 @@
             <h3>There are no items in the cart!</h3>
         </tr>
         <tr th:each="cartItem : ${cartItems}">
-            <th scope="row" th:text="${cartItem.id}"></th>
+            <th scope="row" th:text="${cartItem.cartItemId}"></th>
             <th scope="row" th:text="${cartItem.itemId}"></th>
             <td th:text="${cartItem.name}"></td>
             <td th:text="${cartItem.description}"></td>
