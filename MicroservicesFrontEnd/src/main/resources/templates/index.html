@@ -22,6 +22,12 @@
             </div>
           <hr />
           <div class="row">
+            <div class="col-auto">
+              <a th:href="@{/cart}" class="btn btn-primary">Cart</a>
+            </div>
+            </div>
+          <hr />
+          <div class="row">
             <form class="d-flex"  action="#" th:action="@{/logout}" method="post">
               <div sec:authorize="isAuthenticated()">
                 <input class="btn btn-outline-primary" type="submit" value="Log out"/>
